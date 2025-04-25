@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Lola!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <h2>Selamat Datang!</h2>
+        <p>Masukkan nama & tanggal lahirmu</p>
+        <form id="login-form">
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="date" id="dob" required>
+            <button type="submit">Masuk</button>
+        </form>
+
+    </div>
+
+    <div class="main-container" id="main-container" style="display: none;">
+        <audio id="background-music" loop>
+            <source src="assets/A Thousand Years.mp3" type="audio/mp3">
+        </audio>
+        
+
+        <div class="content">
+            <h1>Happy Birthday, Lola Apita! 🎉</h1>
+            <p>Hari ini adalah hari yang penuh kebahagiaan, karena kita merayakan perjalanan hidupmu yang luar biasa. Semoga di tahun yang baru ini, segala impian dan harapanmu menjadi kenyataan, dan kamu selalu diberikan kesehatan, kebahagiaan, serta kesempatan untuk terus berkembang.</p>
+        </div>
+        
+        <div class="slideshow-container">
+            <div class="slides fade"><img src="assets/lola 1.jpg" alt="Foto 1"></div>
+            <div class="slides fade"><img src="assets/lola 6.jpg" alt="Foto 2"></div>
+            <div class="slides fade"><img src="assets/lola 7.jpg" alt="Foto 3"></div>
+        </div>
+        
+        <div class="button-group">
+            <button class="fancy-button" onclick="showSurprise()">🎉 Surprise</button>
+            <button class="fancy-button" onclick="showQuotes()">📜 Hmmm</button>
+            <button class="fancy-button" onclick="showMemories()">📷 Lihat Kenangan</button>
+        </div>
+        
+        <div id="surprise-text" class="hidden surprise-box">Hidup memang penuh kejutan, dan hari ini adalah salah satunya! Semoga senyum kamu tetap lebar dan semangatmu selalu tinggi, seperti saat pertama kali kita kenal. Teruslah bersinar dan menjadi diri sendiri, karena itu yang membuatmu spesial di mata banyak orang! Paham?</div>
+        <div id="quotes-text" class="hidden surprise-box">"Tetaplah hidup, meski tidak berguna"</div>
+        <div id="memories-popup" class="hidden memories-box">
+            <h3>Kenangan Manis 📸</h3>
+            <div class="memory-images">
+                <img src="assets/lola 8.jpg" alt="Kenangan 1">
+                <img src="assets/lola 9.jpg" alt="Kenangan 2">
+                <img src="assets/lola 10.jpg" alt="Kenangan 3">
+            </div>
+            <button onclick="closeMemories()" class="close-button">Tutup</button>
+        </div>
+        
+        <div class="watermark">Made By Desc Dev</div>
+        
+        <!-- Tombol Putar Musik -->
+        <button onclick="playMusic()" class="fancy-button">🎶 Putar Musik</button>
+        
+        <!-- Tombol Ganti Tema & Musik -->
+        <button onclick="changeThemeAndMusic()" class="fancy-button">🎉 Ganti Tema & Musik!</button>
+
+        <!-- Tombol Party Disco -->
+        <button onclick="changeToDiscoParty()" class="fancy-button">🎉 Party Disco!</button>
+        
+        <div class="dots" style="text-align:center;">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Sakura falling effect
+        const maxSakura = 25;
+        const sakuraColors = ['#fff', '#ffe4e1', '#ffc0cb'];
+      
+        function createSakura() {
+          const sakura = document.createElement('div');
+          sakura.classList.add('sakura');
+          sakura.style.left = Math.random() * 100 + 'vw';
+          sakura.style.animationDuration = (Math.random() * 5 + 5) + 's';
+          sakura.style.opacity = Math.random();
+          sakura.style.fontSize = Math.random() * 10 + 10 + 'px';
+          sakura.style.color = sakuraColors[Math.floor(Math.random() * sakuraColors.length)];
+          sakura.innerText = '🌸';
+          document.body.appendChild(sakura);
+      
+          setTimeout(() => {
+            sakura.remove();
+          }, 10000);
+        }
+      
+        setInterval(() => {
+          if (document.querySelectorAll('.sakura').length < maxSakura) {
+            createSakura();
+          }
+        }, 300);
+      </script>      
+
+</body>
+</html>

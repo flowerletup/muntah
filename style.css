@@ -1,0 +1,263 @@
+/* Reset dan font dasar */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px 10px;
+    overflow-x: hidden;
+}
+
+.login-container, .main-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 12px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+/* Slideshow */
+.slideshow-container {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #ff69b4;
+}
+
+.slides {
+    display: none;
+    height: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.fade {
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.active {
+    background-color: #ff69b4;
+}
+
+/* Tombol Fantastik */
+.button-group {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fancy-button {
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff69b4;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.fancy-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff69b4;
+}
+
+/* Surprise, Quotes, Memories */
+.surprise-box {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding: 18px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.memories-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffe4e1;
+    color: #ff1493;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff69b4;
+    z-index: 999;
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+}
+
+.memory-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.memory-images img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff69b4;
+}
+
+.close-button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #ff69b4;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sakura {
+    position: fixed;
+    top: -5vh;
+    z-index: 1000;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Styling untuk watermark */
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5); /* Warna putih transparan */
+    font-weight: bold;
+    z-index: 1000; /* Pastikan berada di atas semua elemen */
+    pointer-events: none; /* Agar tidak mengganggu interaksi dengan elemen lain */
+}
+
+.party-theme {
+    background: linear-gradient(135deg, #ff0, #ff6347);
+    color: black;
+}
+
+.party-theme button {
+    background-color: #ff6347;
+}
+
+.party-theme .fancy-button {
+    background: linear-gradient(45deg, #ff0, #ff6347);
+    box-shadow: 0 0 25px #ff6347;
+}
+
+/* Tombol Surprise */
+.party-surprise {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    padding: 15px;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Efek background Disco Party */
+@keyframes disco {
+    0% { background: #ff6347; }
+    25% { background: #ff0; }
+    50% { background: #00ff00; }
+    75% { background: #00f; }
+    100% { background: #ff1493; }
+}
+
+.disco-background {
+    animation: disco 0.5s infinite;
+}
